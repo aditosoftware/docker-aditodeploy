@@ -2,11 +2,7 @@ FROM ubuntu:18.04
 
 WORKDIR /opt/ADITO
 
-<<<<<<< HEAD
 ADD https://static.adito.de/common/install/ADITO/ADITODEPLOY_2019.1.3-RC24_unix.tar /tmp/adito.tar
-=======
-ADD https://static.adito.de/common/install/ADITO/ADITODEPLOY_2019.1.3-RC25_unix.tar
->>>>>>> 3ade2ebbe9f754669505d1b481f05a3deeb63adc
 ADD https://static.adito.de/jre/jre-10.0.2_linux-x64_bin.tar.gz /tmp/jar.tar.gz
 ADD response.varfile /tmp/response.varfile
 ADD run.sh /run.sh
