@@ -20,6 +20,7 @@ RUN tar -xf /tmp/adito.tar -C /tmp/ && \
     chmod +x /run.sh && \
     /tmp/installDeploy/ADITO_unix.sh -q -varfile /tmp/response.varfile && \
     chmod +x /opt/ADITO/bin/ADITOdeploy && \
-    rm -rf /tmp/*
+    rm -rf /tmp/* && \
+    rm -Rf /opt/ADITO/webroot
 
 ENTRYPOINT [ "/run.sh" ]
