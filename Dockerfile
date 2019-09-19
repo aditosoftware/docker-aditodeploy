@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 WORKDIR /opt/ADITO
 
-ADD https://static.adito.de/common/install/ADITO/ADITODEPLOY_2019.3.0-RC4_unix.tar \
+ADD https://static.adito.de/common/install/ADITO/ADITODEPLOY_2019.3.0-RC6_unix.tar \
     /tmp/adito.tar
 ADD https://static.adito.de/jre/jre-10.0.2_linux-x64_bin.tar.gz /tmp/jar.tar.gz
 ADD response.varfile /tmp/response.varfile
