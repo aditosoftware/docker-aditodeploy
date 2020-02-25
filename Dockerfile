@@ -2,7 +2,7 @@ FROM adoptopenjdk/openjdk13:x86_64-ubuntu-jdk-13.0.1_9-slim
 
 WORKDIR /opt/ADITO
 
-ADD https://static.adito.de/common/install/ADITO/ADITODEPLOY_2020.0.1-TEST5_unix.tar \
+ADD https://static.adito.de/common/install/ADITO/ADITODEPLOY_2020.0.1-RC1_unix.tar \
     /tmp/adito.tar
 ADD response.varfile /tmp/response.varfile
 ADD run.sh /run.sh
