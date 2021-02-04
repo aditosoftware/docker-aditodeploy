@@ -2,10 +2,9 @@ FROM adoptopenjdk/openjdk13:x86_64-ubuntu-jdk-13.0.2_8-slim
 
 WORKDIR /opt/ADITO
 
-ADD https://static.adito.de/common/install/ADITO/ADITODEPLOY_2021.0.0-RC12_unix.tar \
+ADD https://static.adito.de/common/install/ADITO/ADITODEPLOY_2021.0.0-RC11_unix.tar \
     /tmp/adito.tar
 ADD response.varfile /tmp/response.varfile
-ADD run.sh /run.sh
 
 ENV INSTALL4J_JAVA_HOME=$JAVA_HOME
 
@@ -17,4 +16,12 @@ RUN tar -xf /tmp/adito.tar -C /tmp/ && \
     rm -rf /tmp/* && \
     rm -Rf /opt/ADITO/webroot
 
-ENTRYPOINT [ "/run.sh" ]
+RUN mkdir /tmp/asciidoc && \
+    cd /tmp/asciidoc && \
+    curl https://aditopluginsonline.adito.de/2021.0.0/repository/org.netbeans.asciidoc/org.netbeans.asciidoc.nbm -o asciidoc.nbm && \
+    apt update && \
+	apt install zip -y && \
+	unzip asciidoc.nbm && \
+    rm asciidoc.nbm && \
+    mv -f netbeans/modules/* /opt/ADITO/lib/designer/deploy/modules/ && \
+	mv -f netbeans/config/Modules/* /opt/ADITO/lib/designer/deploy/config/Modules/
