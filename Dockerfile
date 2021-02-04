@@ -5,6 +5,7 @@ WORKDIR /opt/ADITO
 ADD https://static.adito.de/common/install/ADITO/ADITODEPLOY_2021.0.0-RC11_unix.tar \
     /tmp/adito.tar
 ADD response.varfile /tmp/response.varfile
+ADD run.sh /run.sh
 
 ENV INSTALL4J_JAVA_HOME=$JAVA_HOME
 
@@ -25,3 +26,5 @@ RUN mkdir /tmp/asciidoc && \
     rm asciidoc.nbm && \
     mv -f netbeans/modules/* /opt/ADITO/lib/designer/deploy/modules/ && \
 	mv -f netbeans/config/Modules/* /opt/ADITO/lib/designer/deploy/config/Modules/
+	
+ENTRYPOINT [ "/run.sh" ]
