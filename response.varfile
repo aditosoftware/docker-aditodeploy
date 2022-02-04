@@ -1,4 +1,4 @@
-# install4j response file for ADITO 2021
+# install4j response file for ADITO 2022
 adito.installer.portable$Boolean=false
 adito.installer.properties.servicename=ADITOServer
 sys.adminRights$Boolean=true
@@ -20,6 +20,6 @@ sys.installationDir=/opt/ADITO
 sys.languageId=de
 sys.programGroupAllUsers$Boolean=false
 sys.programGroupDisabled$Boolean=true
-sys.programGroupName=ADITO 2021
+sys.programGroupName=ADITO 2022
 
 
