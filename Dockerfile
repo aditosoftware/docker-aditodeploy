@@ -19,7 +19,7 @@ RUN tar -xf /tmp/adito.tar -C /tmp/ && \
 
 RUN mkdir /tmp/asciidoc && \
     cd /tmp/asciidoc && \
-    curl https://aditopluginsonline.adito.de/2022.0.0/repository/org.netbeans.asciidoc/org.netbeans.asciidoc.nbm -o asciidoc.nbm && \
+    curl https://aditopluginsonline.adito.de/2022.1.0/repository/org.netbeans.asciidoc/org.netbeans.asciidoc.nbm -o asciidoc.nbm && \
     apt update && \
 	apt install zip -y && \
 	unzip asciidoc.nbm && \
