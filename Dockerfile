@@ -24,7 +24,7 @@ RUN mkdir /tmp/asciidoc && \
 	apt install zip -y && \
 	unzip asciidoc.nbm && \
     rm asciidoc.nbm && \
-    mv -f netbeans/modules/* /opt/ADITO/lib/designer/deploy/modules/ && \
+    cp -rf netbeans/modules/* /opt/ADITO/lib/designer/deploy/modules/ && \
 	mv -f netbeans/config/Modules/* /opt/ADITO/lib/designer/deploy/config/Modules/
 	
 ENTRYPOINT [ "/run.sh" ]
